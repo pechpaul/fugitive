@@ -1,0 +1,24 @@
+# Base build settings for the entire monorepo
+# fugitive/netlify.toml
+
+[build]
+  # You are explicitly telling Netlify how to build the app.
+  command = "npx nx run-many --target=build --projects=app,api --prod"
+  
+  # You are telling Netlify where the final static files are.
+  publish = "dist/apps/app/browser"
+  
+  # You are telling Netlify where your backend function is.
+  functions = "dist/apps/api"
+
+# ... your redirects
+
+  # Redirect rule to proxy API requests to our serverless function.
+  # This is a powerful feature!
+  [[redirects]]
+    # Any request to /api/* on your Netlify domain...
+    from = "/api/*"
+    # ...will be redirected to our NestJS serverless function.
+    to = "/.netlify/functions/main.serverless"
+    # The status code 200 means this is a rewrite, not a browser redirect.
+    status = 200
