@@ -1,82 +1,96 @@
-# Fugitive
+# ☕ Fugitive: The Perfect Brew
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Welcome to the Fugitive Chai brewery! In this monorepo, we are carefully blending a rich assortment of modern technologies to craft a full-bodied, aromatic, and delightful web application. This isn't just code; it's a recipe for success.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+---
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+### 🌿 Our Secret Recipe (The Tech Stack)
 
-## Finish your CI setup
+Every great chai has its essential ingredients. Here are ours:
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/U237XctUy1)
+* **The Cup (Frontend)**: A robust and elegant cup provided by **Angular**, offering a perfect, modern structure for our user's experience.
+* **The Spices (Backend)**: A powerful and aromatic blend of spices from **NestJS**, providing a scalable and well-organized API.
+* **The Sweetener (Database)**: A flexible dash of sweetness from **MongoDB**, allowing our data to flow smoothly and adapt to any taste.
+* **The Kettle (Monorepo Tool)**: A high-performance kettle from **Nx**, ensuring all our ingredients are managed efficiently and brewed together in perfect harmony.
+* **The Water (Language)**: The pure, strongly-typed water of **TypeScript**, ensuring a clean and reliable brew from start to finish.
 
+---
 
-## Run tasks
+### 🫖 The Brew Guide (Getting Started)
 
-To run the dev server for your app, use:
+Ready to brew your own cup? Follow these steps.
 
-```sh
+#### 1. Prepare Your Station (Prerequisites)
+
+Ensure you have a running instance of **MongoDB** on your machine. You will also need **Node.js** (v20 or higher).
+
+#### 2. Gather the Ingredients (Installation)
+
+Clone the repository and install all the necessary packages from the root directory:
+
+```bash
+npm install
+````
+
+#### 3\. A Gentle Heat (Running in Development)
+
+To get the full experience, you'll need to run both the API (the spices) and the App (the tea) at the same time. The easiest way is to use two separate terminals.
+
+**In your first terminal, steep the spices (run the API):**
+
+```bash
+npx nx serve api
+```
+
+**In your second terminal, pour the tea (run the App):**
+
+```bash
 npx nx serve app
 ```
 
-To create a production bundle:
+Once both are running, open your browser to `http://localhost:4200` to enjoy your fresh brew\!
 
-```sh
-npx nx build app
-```
+-----
 
-To see all available targets to run for a project, run:
+### 🗄️ The Spice Rack (Workspace Structure)
 
-```sh
-npx nx show project app
-```
+Our kitchen is organized for maximum efficiency:
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+  * `apps/`: This is where our final products are stored.
+      * `api/`: Our concentrated chai essence (the NestJS backend).
+      * `app/`: The final, delicious drink we serve to users (the Angular frontend).
+  * `libs/`: Our collection of reusable spices and recipes. Any shared code, interfaces, or logic goes here to be used across our brews.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+-----
 
-## Add new projects
+### ✨ Useful Incantations (Nx Commands)
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+Here are a few magical commands to help you with your brewing:
 
-Use the plugin's generator to create new projects.
+  * **Taste-test a specific brew:**
 
-To generate a new application, use:
+    ```bash
+    npx nx test <project-name>  # e.g., nx test api
+    ```
 
-```sh
-npx nx g @nx/angular:app demo
-```
+  * **Check the quality of your ingredients:**
 
-To generate a new library, use:
+    ```bash
+    npx nx lint <project-name>
+    ```
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
+  * **Efficiently taste-test only what's changed:**
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+    ```bash
+    npx nx affected -t test
+    ```
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+  * **See a map of how all your ingredients connect:**
 
+    ```bash
+    npx nx graph
+    ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+-----
 
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Enjoy the process, and happy brewing\!
