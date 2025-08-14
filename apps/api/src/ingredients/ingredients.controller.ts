@@ -1,4 +1,3 @@
-
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { IngredientsService } from './ingredients.service';
@@ -9,7 +8,6 @@ import { CreateIngredientDto, UpdateIngredientDto } from '@fugitive/interfaces';
 export class IngredientsController {
   constructor(private readonly ingredientsService: IngredientsService) {}
 
-
   @Post()
   @ApiOperation({ summary: 'Create a new ingredient' })
   @ApiResponse({ status: 201, description: 'Ingredient created' })
@@ -17,14 +15,12 @@ export class IngredientsController {
     return this.ingredientsService.create(createIngredientDto);
   }
 
-
   @Get()
   @ApiOperation({ summary: 'Get all ingredients' })
   @ApiResponse({ status: 200, description: 'List of ingredients' })
   findAll() {
     return this.ingredientsService.findAll();
   }
-
 
   @Get(':id')
   @ApiOperation({ summary: 'Get a single ingredient by id' })
@@ -34,7 +30,6 @@ export class IngredientsController {
     return this.ingredientsService.findOne(+id);
   }
 
-
   @Patch(':id')
   @ApiOperation({ summary: 'Update an ingredient by id' })
   @ApiResponse({ status: 200, description: 'Ingredient updated' })
@@ -42,7 +37,6 @@ export class IngredientsController {
   update(@Param('id') id: string, @Body() updateIngredientDto: UpdateIngredientDto) {
     return this.ingredientsService.update(+id, updateIngredientDto);
   }
-
 
   @Delete(':id')
   @ApiOperation({ summary: 'Delete an ingredient by id' })
