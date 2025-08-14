@@ -1,27 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { Sale } from './recipe.schema';
+import { Address, AddressSchema } from './sharedSchemas/adress.schema';
 
 export type CustomerDocument = HydratedDocument<Customer>;
-
-@Schema({ _id: false })
-class Address {
-  @Prop({ required: true, enum: ['Shipping', 'Billing'] })
-  type: string;
-
-  @Prop({ required: true })
-  street: string;
-
-  @Prop({ required: true })
-  city: string;
-
-  @Prop({ required: true })
-  postcode: string;
-
-  @Prop({ required: true })
-  country: string;
-}
-const AddressSchema = SchemaFactory.createForClass(Address);
 
 @Schema({ timestamps: true })
 export class Customer {
