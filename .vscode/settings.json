@@ -1,10 +1,10 @@
 {
-    "nxConsole.nxWorkspacePath": "",
-    "nxConsole.generateAiAgentRules": true,
-    "github.copilot.enable": {
-        "plaintext": true,
-        "markdown": true,
-        "scminput": true
-    },
-    "typescript.tsdk": "node_modules/typescript/lib"
+  "nxConsole.nxWorkspacePath": "",
+  "nxConsole.generateAiAgentRules": true,
+  "github.copilot.enable": {
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

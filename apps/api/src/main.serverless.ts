@@ -1,7 +1,7 @@
 // apps/fugitive-api/src/main.serverless.ts
 
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
+import { AppModule } from './app.module';
 import { configure as serverlessExpress } from '@vendia/serverless-express';
 import { INestApplication } from '@nestjs/common';
 

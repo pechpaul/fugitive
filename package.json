@@ -2,7 +2,9 @@
   "name": "@fugitive/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.1.0",
