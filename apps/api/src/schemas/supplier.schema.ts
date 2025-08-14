@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { Ingredient } from './ingredient.schema';
+import { Address, AddressSchema } from './sharedSchemas/adress.schema';
 
 export type SupplierDocument = HydratedDocument<Supplier>;
 
@@ -27,13 +28,8 @@ export class Supplier {
     email?: string;
   };
 
-  @Prop({ type: { street: String, city: String, postcode: String, country: String } })
-  address: {
-    street: string;
-    city: string;
-    postcode: string;
-    country: string;
-  };
+  @Prop({ type: AddressSchema })
+  address: Address;
 
   @Prop({ type: [CatalogItemSchema], default: [] })
   catalog: CatalogItem[];

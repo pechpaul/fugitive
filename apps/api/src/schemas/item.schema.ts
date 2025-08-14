@@ -14,7 +14,7 @@ export class Item {
   @Prop({ required: true })
   name: string; // e.g., "50g Bag"
 
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: true, uppercase: true })
   sku: string; // e.g., "CHAI-50G"
 
   @Prop({ required: true })

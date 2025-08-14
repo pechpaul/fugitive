@@ -26,9 +26,6 @@ export class Sale {
   @Prop({ type: [SaleItemSchema], required: true })
   items: SaleItem[];
 
-  @Prop({ required: true })
-  totalAmount: number;
-
   @Prop({ required: true, enum: ['Pending', 'Completed', 'Refunded'], default: 'Pending' })
   status: string;
 
